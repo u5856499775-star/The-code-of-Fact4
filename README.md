@@ -1,3 +1,19 @@
+# Verification of Fact 4 for Digraphs (n = 4, 5)
+This repository provides a computational verification of **Fact 4** from the paper *“Rainbow $\overrightarrow{C_4}$'s in arc-colored digraphs”* (to appear). The code enumerates all digraphs on 4 and 5 vertices, computes the invariant \(\pi(D)\), and reproduces the values of \(\pi(n,m)\) given in Table 2.
+# Definition of \(\pi(D)\)
+Let \(D\) be a digraph. We define \(\pi(D)=|\{C\cong\overrightarrow{C_4}:V(C)\subseteq V(D), |A(C)\cap A(D)|\geq2\}|\).
+# Purpose
+Fact 4 of the paper states the exact maximum of \(\pi(D)\) over all digraphs \(D\) of order \(n\) with exactly \(m\) arcs, for \(n = 4, 5\) and all admissible \(m\). The extremal digraphs are listed in Table 2. Our script verifies these values by brute force: it generates **every** possible arc set, computes \(\pi(D)\), and records the maximisers. Isomorphic digraphs are identified via a canonical labelling, and one representative per isomorphism class is output.
+# Requirements
+- Python 3.6 or higher
+- No external libraries (uses only `itertools` and `time`)
+# How to Run
+1. Save the script below as `verify_fact4.py`.
+2. Open a terminal and run: ```bash python verify_fact4.py
+3. At the prompt, enter 4 or 5.
+4.The program will enumerate all arc combinations for \(m = 2,\dots,6\) (when \(n = 4\)) or \(m = 2,\dots,8\) (when \(n = 5\)).
+
+# Code
 import itertools
 import time
 
