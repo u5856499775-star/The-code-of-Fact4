@@ -16,7 +16,6 @@ Fact 4 of the paper states the exact maximum of \(\pi(D)\) over all digraphs \(
 
 import itertools
 import time
-
 def solve(n: int):
     if n not in (4, 5):
         print("Only n = 4 or 5 are supported.")
